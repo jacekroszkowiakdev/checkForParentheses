@@ -68,5 +68,5 @@ console.log(checkarentheses_v2("[(]]"));
 console.log(checkarentheses_v2("[[["));
 console.log(checkarentheses_v2("text"));
 console.log(checkarentheses_v2("[asdf]"));
-// does not support other values including empty space:
+// does not support spaces:
 console.log(checkarentheses_v2("([vulgar, not]))"));
