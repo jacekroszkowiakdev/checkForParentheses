@@ -3,7 +3,7 @@
 // Correctly formatted [asdf]” or “([vulgar, not])”
 // Incorrect formatted "([)]"
 
-let checkarentheses = (str: string) => {
+let checkParentheses = (str: string) => {
     let stack: string[] = [];
     for (let i = 0; i < str.length; i++) {
         let leftParenthesis = stack[stack.length - 1];
@@ -21,16 +21,16 @@ let checkarentheses = (str: string) => {
     return stack.length ? false : true;
 };
 
-console.log(checkarentheses(""));
-console.log(checkarentheses("[()]{}{()}"));
-console.log(checkarentheses("([)])"));
-console.log(checkarentheses("[(]]"));
-console.log(checkarentheses("[[["));
+console.log(checkParentheses(""));
+console.log(checkParentheses("[()]{}{()}"));
+console.log(checkParentheses("([)])"));
+console.log(checkParentheses("[(]]"));
+console.log(checkParentheses("[[["));
 
 // does not support other values including empty space:
-console.log(checkarentheses("text"));
-console.log(checkarentheses("([vulgar, not]))"));
-console.log(checkarentheses("[asdf]"));
+console.log(checkParentheses("text"));
+console.log(checkParentheses("([vulgar, not]))"));
+console.log(checkParentheses("[asdf]"));
 
 const leftBrackets = ["(", "[", "{"];
 const rightBrackets = [")", "]", "}"];
@@ -41,7 +41,7 @@ const bracketMap = {
     ")": "(",
 };
 
-let checkarentheses_v2 = (str: string) => {
+let checkParentheses_v2 = (str: string) => {
     let stack: string[] = [];
 
     for (let i = 0; i < str.length; i++) {
@@ -61,12 +61,12 @@ let checkarentheses_v2 = (str: string) => {
     return stack.length === 0;
 };
 
-console.log(checkarentheses_v2(""));
-console.log(checkarentheses_v2("[()]{}{()}"));
-console.log(checkarentheses_v2("([)])"));
-console.log(checkarentheses_v2("[(]]"));
-console.log(checkarentheses_v2("[[["));
-console.log(checkarentheses_v2("text"));
-console.log(checkarentheses_v2("[asdf]"));
+console.log(checkParentheses_v2(""));
+console.log(checkParentheses_v2("[()]{}{()}"));
+console.log(checkParentheses_v2("([)])"));
+console.log(checkParentheses_v2("[(]]"));
+console.log(checkParentheses_v2("[[["));
+console.log(checkParentheses_v2("text"));
+console.log(checkParentheses_v2("[asdf]"));
 // does not support spaces:
-console.log(checkarentheses_v2("([vulgar, not]))"));
+console.log(checkParentheses_v2("([vulgar, not]))"));
